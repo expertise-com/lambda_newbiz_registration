@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  lambda_ahrefs_v3
+
+  Lambda function to handle ahrefs API v3
+
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  AHrefsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: ahrefs_v3
+      CodeUri: ahrefs/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Role: arn:aws:iam::025737178121:role/ExpertiseLambdas
+      Architectures:
+        - x86_64
+
+Outputs:
+  AHrefsFunction:
+    Description: "ahrefs v3 Lambda Function ARN"
+    Value: !GetAtt AHrefsFunction.Arn
