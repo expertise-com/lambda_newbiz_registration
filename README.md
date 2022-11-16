@@ -1,3 +1,3 @@
-# lambda ahrefs v3
+# lambda <CHANGE ME TO THE NAME OF THIS REPO>
 
-Lambda function handle new ahrefs API v3
+Lambda function handle <CHANGE ME TO DESCRIPTION OF WHAT THIS FUNCTION DOES>
