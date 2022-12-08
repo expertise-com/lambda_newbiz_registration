@@ -1,18 +1,20 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  <CHANGE ME TO MATCH THE README.md>
+lambda_newbiz_reviewme 
+
+Gets data from NewBiz form and logs to the DW. Then forwards the request to SF.
 
 Globals:
   Function:
     Timeout: 3
 
 Resources:
-  <CHANGE TO FUNCTION NAME>Function:
+  ReviewMeFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: <CHANGE TO FUNCTION NAME>
-      CodeUri: <CHANGE TO FUNCTION URI>/
+      FunctionName: ReviewMe
+      CodeUri: function/
       Handler: app.lambda_handler
       Runtime: python3.9
       Role: arn:aws:iam::025737178121:role/ExpertiseLambdas
@@ -20,6 +22,6 @@ Resources:
         - x86_64
 
 Outputs:
-  AHrefsFunction:
-    Description: "<CHANGE ME TO MATCH THE PROJECT NAME> Lambda Function ARN"
-    Value: !GetAtt <CHANGE TO FUNCTION NAME>Function.Arn
+  ReviewMeFunction:
+    Description: "NewBiz Review Me Lambda Function ARN"
+    Value: !GetAtt ReviewMeFunction.Arn

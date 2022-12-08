@@ -1,4 +1,3 @@
-# Push the Data into Warehouse and salesforce <CHANGE ME TO THE NAME OF THIS REPO>
+# lambda_newbiz_reviewme 
 
-NEW NewBiz form push into Data Warehouse <CHANGE ME TO DESCRIPTION OF WHAT THIS FUNCTION DOES>
-
+Gets data from NewBiz form and logs to the DW. Then forwards the request to SF.
