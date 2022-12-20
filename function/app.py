@@ -156,11 +156,10 @@ def log_to_data_warehouse(**data):
 
 
 def lambda_handler(event, context):
-    return json.dumps(event)
 
-    if event['requestContext']['http']['method'] != 'POST':
-        print(event['requestContext']['http']['method'])
-        if event['requestContext']['http']['method'] == 'OPTIONS':
+    if event['httpMethod'] != 'POST':
+        print(event['httpMethod'])
+        if event['httpMethod'] == 'OPTIONS':
             return {"statusCode": 200}
         return {"statusCode": 403}
 
