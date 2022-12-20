@@ -156,6 +156,7 @@ def log_to_data_warehouse(**data):
 
 
 def lambda_handler(event, context):
+    print(event)
 
     if event['httpMethod'] != 'POST':
         print(event['httpMethod'])
