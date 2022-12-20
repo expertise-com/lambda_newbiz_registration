@@ -13,7 +13,7 @@ Resources:
   ReviewMeFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: newbiz_registration
+      FunctionName: newbiz-registration
       CodeUri: function/
       Handler: app.lambda_handler
       Runtime: python3.9
