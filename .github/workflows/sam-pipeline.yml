@@ -15,4 +15,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
       - run: sam build --use-container
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name ahrefs_api_v3 --s3-bucket data-warehouse-lambdas-builds --capabilities CAPABILITY_IAM --region us-east-2
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name newbiz_registration --s3-bucket data-warehouse-lambdas-builds --capabilities CAPABILITY_IAM --region us-east-2

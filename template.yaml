@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  lambda_newbiz_reviewme 
+  lambda_newbiz_registration
 
   Gets data from NewBiz form and logs to the DW. Then forwards the request to SF.
 
@@ -13,7 +13,7 @@ Resources:
   ReviewMeFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: ReviewMe
+      FunctionName: newbiz_registration
       CodeUri: function/
       Handler: app.lambda_handler
       Runtime: python3.9
