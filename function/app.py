@@ -196,7 +196,7 @@ def lambda_handler(event, context):
 
 
 if __name__ == '__main__':
-    print(lambda_handler({'requestContext': {'http': {'method': 'POST'}},
+    print(lambda_handler({'httpMethod': 'POST',
   'oid': '00D3i000000pZm6',
   'recordType': '0123i0000005pAlAAI',
   'lead_source': 'New Biz Form',
