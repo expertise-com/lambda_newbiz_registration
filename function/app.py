@@ -126,21 +126,21 @@ def log_to_data_warehouse(**data):
     try:
         db = db_conn.cursor()
 
-        oid = data['oid']
-        record_type = data['recordType']
-        lead_source = data['lead_source']
-        debug = data['debug']
-        debug_email = data['debugEmail']
-        ret_url = data['retURL']
-        reason_for_reaching_out = data['00N3i00000CxJLc']
-        email = data['email']
-        first_name = data['first_name']
-        last_name = data['last_name']
-        phone = data['00N3i00000DZFN5']
-        company = data['company']
-        business_website = data['00N3i00000DEQ9d']
-        zipcode = data['Zip_Code__c']
-        requested_vertical = data['Requested_Vertical_2__c']
+        oid = data['oid'] if 'oid' in data else None
+        record_type = data['recordType'] if 'recordType' in data else None
+        lead_source = data['lead_source'] if 'lead_source' in data else None
+        debug = data['debug'] if 'debug' in data else None
+        debug_email = data['debugEmail'] if 'debugEmail' in data else None
+        ret_url = data['retURL'] if 'retURL' in data else None
+        reason_for_reaching_out = data['00N3i00000CxJLc'] if '00N3i00000CxJLc' in data else None
+        email = data['email'] if 'email' in data else None
+        first_name = data['first_name'] if 'first_name' in data else None
+        last_name = data['last_name'] if 'last_name' in data else None
+        phone = data['00N3i00000DZFN5'] if '00N3i00000DZFN5' in data else None
+        company = data['company'] if 'company' in data else None
+        business_website = data['00N3i00000DEQ9d'] if '00N3i00000DEQ9d' in data else None
+        zipcode = data['Zip_Code__c'] if 'Zip_Code__c' in data else None
+        requested_vertical = data['Requested_Vertical_2__c'] if 'Requested_Vertical_2__c' in data else None
 
         query = """INSERT INTO sources_reviewmelog (oid, record_type, lead_source, debug, debug_email, ret_url,
                         reason_for_reaching_out, email, first_name, last_name, phone, company, business_website, zipcode,
