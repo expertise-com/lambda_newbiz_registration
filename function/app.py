@@ -129,7 +129,7 @@ def log_to_data_warehouse(**data):
         oid = data['oid'] if 'oid' in data else None
         record_type = data['recordType'] if 'recordType' in data else None
         lead_source = data['lead_source'] if 'lead_source' in data else None
-        debug = data['debug'] if 'debug' in data else None
+        debug = data['debug'] if 'debug' in data else False
         debug_email = data['debugEmail'] if 'debugEmail' in data else None
         ret_url = data['retURL'] if 'retURL' in data else None
         reason_for_reaching_out = data['00N3i00000CxJLc'] if '00N3i00000CxJLc' in data else None
@@ -200,8 +200,8 @@ if __name__ == '__main__':
   'oid': '00D3i000000pZm6',
   'recordType': '0123i0000005pAlAAI',
   'lead_source': 'New Biz Form',
-  'debug': '1',
-  'debugEmail': 'chris@expertise.com',
+  # 'debug': '1',
+  # 'debugEmail': 'chris@expertise.com',
   'retURL': 'https://www.expertise.com/review-me-verification',
   '00N3i00000CxJLc': ["Reach new customers", "Become award-winning", "Stand out from competition"],
   'email': 'email@mail.com',
