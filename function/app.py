@@ -103,7 +103,10 @@ def push_to_salesforce(**data):
 
         closest_directory_salesforce_id = get_closest_directory_salesforce_id(zipcode, requested_vertical)
 
-        tpv = sf.query(f"SELECT Top_Provider_Value__c FROM Directory__c where Id = '{closest_directory_salesforce_id}' ")['records'][0]['Top_Provider_Value__c']
+        if closest_directory_salesforce_id:
+            tpv = sf.query(f"SELECT Top_Provider_Value__c FROM Directory__c where Id = '{closest_directory_salesforce_id}' ")['records'][0]['Top_Provider_Value__c']
+        else:
+            tpv = 0
 
         describe = sf.Inbound_Lead_Prioritization__mdt.describe()
         fields = [field['name'] for field in describe['fields']]
@@ -211,5 +214,5 @@ if __name__ == '__main__':
   'company': 'Test Company',
   '00N3i00000DEQ9d': 'www.test.com',
   'Zip_Code__c': '90093',
-  'Requested_Vertical_2__c': 'a0V3i000000yVJDEA2'
+  'Requested_Vertical_2__c': 'a0V6e00000y1QdoEAE'
 }, None))
